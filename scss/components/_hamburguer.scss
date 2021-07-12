@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as *;
+
+.header__hamburguer {
+    display: none;
+
+    &_triangle {
+        width: 0;
+        height: 0;
+        border-bottom: 2.5rem solid v.$white;
+        border-left: 2.5rem solid transparent;
+    }
+
+    &_menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: v.$white;
+
+        padding: 3.6rem 0;
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.5rem;
+
+            li {
+                a{
+                    font-family: v.$fontBarlow;
+                    font-size: v.$bodyFontSize;
+                    text-decoration: none;
+                    color: v.$darkGrayishBlue;
+
+                    &:hover {
+                        color: v.$veryDrkGrayishBlue;
+                    }
+                }
+            }
+    }
+    }  
+}
+
+.btn-hamburguer {
+        font-family: v.$fontFraunces;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1.4375rem 2rem;
+        background-color: v.$yellow;
+        margin-top: 3rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        color: v.$veryDrkDesBlue;
+}
+
+.hamburguer_mobile {
+    position: absolute;
+    top: 8rem;
+    left: 6%;
+    width: 88%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

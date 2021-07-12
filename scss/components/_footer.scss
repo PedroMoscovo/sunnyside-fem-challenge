@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as v;
+
+.footer {
+    
+    text-align: center;
+    background: #90D4C5; // Had to color drop the footer on Figma
+    padding-top: 4.375rem;
+
+    &__img {
+        padding-bottom: 2rem;
+    }
+
+    &__links{
+        padding-bottom: 5.625rem;
+
+        a{
+            color: v.$darkModCyan;
+            font-family: v.$fontBarlow;
+            font-size: v.$bodyFontSize;
+        }
+
+        a:not(:last-child) {
+            padding-right: 3.75rem;
+        }
+    }
+
+    &__socials {
+
+        padding-bottom: 4.375rem;
+        
+        a:not(:last-child) {
+            padding-right: 0.9375rem;
+        }
+    }
+}

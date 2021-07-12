@@ -1,0 +1,176 @@
+@use 'variables' as v;
+@use 'mixins' as *;
+
+// CSS Reset
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+    body {
+        font-size: v.$bodyFontSize;
+        line-height: 1.4;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h3 { 
+        font-size: v.$bodyFontSize
+    }
+
+    // FEM Atrributions
+
+    .attribution { font-size: 11px; text-align: center; font-family: v.$fontBarlow; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+    // Flexbox
+
+    .flex {
+        display: flex;
+    
+        &-jc-sb {
+            justify-content: space-between;
+        }
+    
+        &-jc-c {
+            justify-content: center;
+        }
+    
+        &-ai-c {
+            align-items: center;
+        }
+        
+        &-dir-col {
+            flex-direction: column;
+        }
+    }
+
+    // Grid
+
+    .grid {
+        display: grid;
+    }
+
+    .grid-temp-col {
+        grid-template-columns: 50% 50%;
+
+        @include media("<=phone") {
+           grid-template-columns: 100%;
+                    }
+    }
+    // Buttons
+
+    .btn {
+        padding: 1.4375rem 2.0625rem;
+        background: v.$white;
+        border-radius: 50px;
+        border: 0;
+        cursor: pointer; 
+        color: #333;
+        font-family: v.$fontFraunces !important;
+        text-transform: uppercase;
+
+        &:hover {
+            background: #73D0FC;
+            color: v.$white;
+        }
+    }
+
+    .btn-secondary {
+        color: v.$veryDrkDesBlue;
+        font-family: v.$fontFraunces;
+        
+    }
+
+
+    .btn-secondary-yellow {
+        position: relative;
+
+        &:hover:before {
+            opacity: 100%;
+        }
+    }
+
+    .btn-secondary-softred {
+        position: relative;
+
+        &:hover:before {
+            opacity: 100%;
+        }
+    }
+
+    .btn-secondary-yellow:before {
+        border-top: 10px solid v.$yellow;
+        border-radius: 50px;
+        content:"";
+        position: absolute; 
+        top: 60%; left: -5px; right: 0; bottom: 0;
+        width: 8.4375rem;
+        z-index: -1;
+        opacity: 20%;
+
+    }
+
+    .btn-secondary-softred:before {
+        border-top: 10px solid v.$softRed;
+        border-radius: 50px;
+        content:"";
+        // margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; 
+        top: 60%; left: -5px; right: 0; bottom: 0;
+        width: 8.4375rem;
+        z-index: -1;
+        opacity: 20%;
+    }
+
+    // Color Filter
+
+    .filter-green {
+        filter: invert(54%) sepia(8%) saturate(2186%) hue-rotate(118deg) brightness(89%) contrast(87%);    }
+
+    // Hide on Devices
+
+    .hide-for-mobile {
+        @include media("<=phone") {
+display: none;
+        }
+    }
+
+    .hide-for-desktop {
+        @include media(">phone") {
+display: none;
+        }
+    }
+
+    .hide-script {
+        opacity: 0.5;
+        transition: all 0.4s ease;
+    }
+
+
+    // .hide-for-desktop {
+    //     @include breakpoint-down(large){
+    //         display: none;
+    //     }
+    // }
+
+    // .swap-for-mobile {
+    //     @include breakpoint-down(medium) {
+    //             background: url(/images/mobile/image-header.jpg) no-repeat center center/cover;
+    //     }
+    // }
+
